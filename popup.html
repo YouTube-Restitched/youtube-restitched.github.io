@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 290px; margin: 0; padding: 14px; font: 14px/1.4 Roboto, Arial, sans-serif; background: #fff; color: #0f0f0f; }
+  h1 { font-size: 15px; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+  h1 span { background: #cc0000; color: #fff; font-size: 11px; padding: 3px 6px; border-radius: 2px; }
+  label.row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; cursor: pointer; }
+  input[type=checkbox] { width: 18px; height: 18px; accent-color: #cc0000; }
+  button { width: 100%; margin-top: 12px; padding: 9px; border: 0; border-radius: 6px; background: #0f0f0f; color: #fff; font-weight: 500; cursor: pointer; }
+  button:hover { background: #333; }
+  .hint { color: #606060; font-size: 12px; margin-top: 6px; }
+  ul { list-style: none; padding: 0; margin: 10px 0 0; max-height: 140px; overflow: auto; }
+  li { display: flex; gap: 6px; align-items: center; font: 11px monospace; background: #f2f2f2; padding: 4px 6px; border-radius: 4px; margin-bottom: 4px; word-break: break-all; }
+  li button { width: auto; margin: 0; padding: 2px 7px; background: #cc0000; font-size: 11px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+  <h1>YouTube Classic <span>SUBSCRIBE</span></h1>
+
+  <label class="row">Old red Subscribe button <input type="checkbox" id="redSub"></label>
+  <label class="row">Classic video layout <input type="checkbox" id="oldLayout"></label>
+  <label class="row">Hide Join and Thanks <input type="checkbox" id="hideJoinAndThanks"></label>
+  <label class="row">Sharp action buttons <input type="checkbox" id="sharpButtons"></label>
+  <label class="row">Icons only under the video (no text) <input type="checkbox" id="iconOnly"></label>
+  <label class="row">Hide text on thumbnails <input type="checkbox" id="hideThumbText"></label>
+
+  <button id="pick">Pick an element to hide</button>
+  <div class="hint">If some thumbnail text still shows, click this, then click the text on any thumbnail. It disappears from all thumbnails.</div>
+
+  <ul id="rules"></ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>

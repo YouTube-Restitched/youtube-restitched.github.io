@@ -1,0 +1,181 @@
+/* ===========================================================
+   1) Old red SUBSCRIBE button
+   =========================================================== */
+
+html.ytc-redsub button[data-ytc-sub="0"] {
+  background: #cc0000 !important;
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+}
+html.ytc-redsub button[data-ytc-sub="0"]:hover {
+  background: #b00000 !important;
+  background-color: #b00000 !important;
+}
+html.ytc-redsub button[data-ytc-sub="0"] * {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+html.ytc-redsub button[data-ytc-sub="1"] {
+  border-radius: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+}
+
+html.ytc-redsub .smartimation__border,
+html.ytc-redsub yt-smartimation .smartimation__background {
+  display: none !important;
+}
+
+/* ===========================================================
+   2) Thumbnail text overlays
+   =========================================================== */
+
+html.ytc-notext ytd-thumbnail [class*="text-overlay" i],
+html.ytc-notext ytd-thumbnail [class*="title-overlay" i],
+html.ytc-notext ytd-thumbnail [class*="thumbnail-text" i],
+html.ytc-notext yt-thumbnail-view-model [class*="text-overlay" i],
+html.ytc-notext yt-thumbnail-view-model [class*="title-overlay" i],
+html.ytc-notext yt-thumbnail-view-model [class*="thumbnail-text" i],
+html.ytc-notext a#thumbnail [class*="text-overlay" i],
+html.ytc-notext [data-ytc-thumbtext="1"] {
+  display: none !important;
+}
+
+/* ===========================================================
+   3) Classic video layout & Sharp buttons
+   =========================================================== */
+
+html.ytc-oldlayout ytd-watch-metadata #top-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "info  actions"
+    "owner owner" !important;
+  align-items: center !important;
+  margin-top: 8px !important;
+  border: 0 !important;
+}
+
+html.ytc-oldlayout #ytc-info {
+  grid-area: info;
+  color: var(--yt-spec-text-secondary, #aaa);
+  font: 400 14px/20px Roboto, Arial, sans-serif;
+  white-space: normal;
+  overflow: visible;
+  min-width: 140px;
+  padding-right: 16px;
+}
+
+html.ytc-oldlayout ytd-watch-metadata #actions {
+  grid-area: actions !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  justify-self: end !important;
+}
+
+html.ytc-oldlayout ytd-watch-metadata #owner {
+  grid-area: owner !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 8px 0 0 0 !important;
+  padding: 16px 0 !important;
+  border-top: 1px solid var(--yt-spec-10-percent-layer, rgba(255,255,255,0.1)) !important;
+  border-bottom: 1px solid var(--yt-spec-10-percent-layer, rgba(255,255,255,0.1)) !important;
+}
+
+html.ytc-oldlayout ytd-watch-metadata #owner #subscribe-button {
+  margin-left: auto !important;
+}
+
+/* Sharp buttons style (less rounded / sharper borders as requested) */
+html.ytc-sharp ytd-watch-metadata #actions button,
+html.ytc-sharp ytd-watch-metadata #actions [class*="segmented" i],
+html.ytc-sharp ytd-watch-metadata #actions yt-button-shape,
+html.ytc-sharp ytd-watch-metadata #actions toggle-button-view-model {
+  border-radius: 4px !important;
+}
+html.ytc-sharp ytd-watch-metadata #actions [class*="button-shape" i] {
+  border-radius: 4px !important;
+}
+
+html.ytc-oldlayout.ytc-infomoved ytd-watch-metadata #description #info-container {
+  display: none !important;
+}
+
+/* ===========================================================
+   4) Hide Join and Thanks buttons
+   =========================================================== */
+html.ytc-nojointhx ytd-watch-metadata #actions [data-ytc-jointhx="1"] {
+  display: none !important;
+}
+
+/* ===========================================================
+   5) Icons only under the video & Right-to-Left reordering
+   =========================================================== */
+
+/* Hide text on secondary action buttons */
+html.ytc-icononly ytd-watch-metadata #actions button .yt-spec-button-shape-next__button-text-content,
+html.ytc-icononly ytd-watch-metadata #actions button [class*="button-text" i] {
+  display: none !important;
+}
+html.ytc-icononly ytd-watch-metadata #actions like-button-view-model button .yt-spec-button-shape-next__button-text-content {
+  display: block !important;
+}
+
+html.ytc-icononly ytd-watch-metadata #actions button .yt-spec-button-shape-next__icon {
+  margin: 0 !important;
+}
+html.ytc-icononly ytd-watch-metadata #actions button.yt-spec-button-shape-next--icon-leading {
+  padding: 0 12px !important;
+  min-width: 36px !important;
+}
+html.ytc-icononly ytd-watch-metadata #actions like-button-view-model button.yt-spec-button-shape-next--icon-leading {
+  padding: 0 14px 0 12px !important;
+}
+
+/* Hide the 3-dots menu container when iconOnly is active */
+html.ytc-icononly ytd-watch-metadata #actions ytd-menu-renderer {
+  display: none !important;
+}
+
+/* Right-to-Left flow for buttons except Like/Dislike, pulling icons to the right */
+html.ytc-icononly ytd-watch-metadata #actions #top-level-buttons-computed {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+}
+
+/* ===========================================================
+   Element picker highlight
+   =========================================================== */
+.ytc-pick-hover {
+  outline: 3px solid #ff0033 !important;
+  outline-offset: -3px !important;
+  background-color: rgba(255, 0, 51, 0.15) !important;
+  cursor: crosshair !important;
+}
+
+#ytc-pick-banner {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  background: #0f0f0f;
+  color: #fff;
+  font: 500 14px/1.4 Roboto, Arial, sans-serif;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}

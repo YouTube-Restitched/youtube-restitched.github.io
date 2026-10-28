@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Classic Tweaks",
+  "version": "1.7.0",
+  "description": "Brings back the old red Subscribe button and removes the text overlays on video thumbnails.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+  "action": {
+    "default_title": "YouTube Classic Tweaks",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

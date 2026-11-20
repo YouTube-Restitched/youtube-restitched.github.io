@@ -1,4 +1,5 @@
 {
+  "manifest_version": 3,
   "name": "YouTube Restitched",
   "version": "7.0",
   "browser_specific_settings": {
